@@ -1,0 +1,43 @@
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :first_name, class:"form-label", for: "exampleFormControlInput1" %>
+    <%= form.text_field :first_name, class:"form-control", for: "exampleFormControlInput1", placeholder: "Enter your given name"  %>
+  </div>
+
+
+  <div class="mb-3">
+    <%= form.label :last_name, class:"form-label", for: "exampleFormControlInput1" %>
+    <%= form.text_field :last_name, class:"form-control", for: "exampleFormControlInput1", placeholder: "Enter your family name" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email, class:"form-label", for: "exampleFormControlInput1" %>
+    <%= form.text_field :email, class:"form-control", for: "exampleFormControlInput1", placeholder: "id@domain.com" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :phone, class:"form-label", for: "exampleFormControlInput1" %>
+    <%= form.text_field :phone, class:"form-control", for: "exampleFormControlInput1", placeholder: "Enter Phonenumber" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :twitter, class:"form-label", for: "exampleFormControlInput1" %>
+    <%= form.text_field :twitter, class:"form-control", for: "exampleFormControlInput1", placeholder: "@twitter_handle" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit %>
+  </div>
+<% end %>
